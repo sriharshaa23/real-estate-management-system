@@ -1,0 +1,116 @@
+
+body {
+  margin: 0;
+  /* background-image: linear-gradient(45deg, #49a09d, #5f2c82); */
+  /* background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673); */
+  /* box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75); */
+  background-image: url(../img/blue-snow.png);
+  font-family: Arial, Helvetica, helvetica;
+
+}
+
+.data{
+    display : flex;
+    justify-content:center;
+    margin-top: 50px;
+    align-items:center;
+}
+.circle{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 10px solid #3bbfd6;
+    line-height:120px;
+    text-align:center;
+    font-size: 30px;
+    margin-right: 70px;
+    font-family: ubuntu;
+    font-weight: 600;
+   
+  } 
+
+ 
+  .ornament{
+    width : 20%;
+    text-align:center;
+  }
+  .ornament h2{
+    position:relative;
+    display:inline-block;
+    padding:24px 64px;
+  }
+  .ornament h2:before, .ornament h2:after{
+    content:"";
+    display:block;
+    width:50%;
+    height:4px;
+    border-top:1px solid #111;
+    position:absolute;
+    top:0;
+  }
+  .ornament h2:before{left:-24px;}
+  .ornament h2:after{right:-24px;}
+  .ornament h2 span{
+    display:block;
+    width:4px;height:4px;
+    border:2px solid #111;
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+    position:absolute;
+    top:-4px;
+    left:50%;
+    margin-left:-4px;
+  }
+
+.container {
+
+  width : 100%;
+  /* height : 100%; */
+  padding : auto;
+
+}
+table {
+ 
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin : 60px  auto;
+  
+  
+}
+th,
+td {
+  padding: 30px;
+  /* background-color: rgba(238, 109, 109, 0.2); */
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+}
+th {
+  text-align: center;
+  font-weight: 800;
+  
+}
+tbody{
+    background-image: linear-gradient(to right, #93c7dd, #40b6e4, #03bcf5, #0babb1);
+}
+thead th {
+  background-color: #525563;
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+

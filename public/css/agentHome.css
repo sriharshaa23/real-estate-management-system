@@ -1,0 +1,121 @@
+body {
+  background-image: url(../img/blue-snow.png);
+  
+}
+
+.logout {
+  display: flex;
+  margin: 10px;
+  justify-content: flex-end;
+}
+.logout a button {
+  font-size: 20px;
+  padding: 12px 50px;
+  background-color: #07daff;
+  border-radius: 15px;
+  border-color: white;
+}
+
+.agent {
+  margin: 0;
+  padding: 0;
+}
+
+.agent_info_width {
+  width: 60%;
+}
+.agent_info {
+  margin-bottom: 20px;
+  margin-left: 310px;
+  margin-right:150px;
+  display: flex;
+  font-family: ubuntu;
+  justify-content: center;
+}
+
+.tabledata {
+  margin: 10px 40px;
+}
+
+.property_details {
+  margin-bottom:  0.5px;
+}
+
+table {
+  max-width: 1500px;
+  margin: 10px auto;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+ 
+  margin-bottom: 20px;
+}
+
+thead th {
+  font-weight: 400;
+  width : 500px;
+  background: #0dcaf0;
+  color: black;
+  height: 50px;
+}
+
+th, td {
+  text-align: center;
+  padding: 20px;
+  font-weight: 300;
+  font-family:ubuntu;
+  font-size: 14px;
+  width: 1000px;
+}
+.property_details > h1 {
+  text-align: center;
+  margin: 32px 40px;
+  font-size: 40px;
+  font-family: ubuntu;
+}
+
+.property_sold_rented {
+  width: 50%;
+  margin: 40px auto;
+}
+.property_sold_rented > h1 {
+  text-align: center;
+  margin: 32px 40px;
+  font-size: 40px;
+  font-family: ubuntu;
+}
+.card {
+  height: 25%;
+  width: 200px;
+  margin: auto;
+  background: #07daff;
+  opacity: 0.95;
+}
+
+a:hover {
+  color: black;
+}
+.card > button {
+  display: flex;
+  flex-direction: bottom;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.add:active {
+  background: #07daff;
+}
+
+.submit {
+  padding: 2px 17px;
+  background: #07daff;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.submit:active {
+  background: #07daff;
+}
+
+form {
+  display: flex;
+  justify-content: space-around;
+}

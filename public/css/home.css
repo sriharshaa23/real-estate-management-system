@@ -1,0 +1,15 @@
+.container{
+    display :flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-top: 10px;
+    height : 100vh;
+    
+}
+
+body{
+    background-image: url(../img/building.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;
+}

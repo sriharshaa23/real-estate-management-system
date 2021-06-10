@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400i,700");
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+/* html,
+body{
+  /* height: 100vh;   */
+
+.card{
+    margin : 50px auto;
+  width: 954px;
+  max-width: 100%;
+  text-align: center;
+  border-radius: 12px;  
+  background: white;
+  border: 1px solid #d4d4d4;
+  height : 50%
+}
+.card header {
+  background-image: url('https://images.unsplash.com/photo-1450704944629-6a65f6810cf2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80');
+  height: 200px;
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 170px;
+}
+.card header img {
+  margin: 100px 40px 10px 40px;
+  border-radius: 50%;
+  height: 140px;
+  width: 130px;
+  border: 6px solid white;
+}
+.card header p {
+  color: #444;
+  font-size: 24px;
+  font-weight: 300;
+  padding:5px;
+  
+}
+
+.card header h4 {
+  
+  color: #444;
+  font-size: 13px;
+  font-weight: 300;
+  padding : 5px;
+    
+  }
+
+.card header h5 {
+    color: #444;
+    font-size: 13px;
+    font-weight: 300;
+    padding : 5px;
+    
+    
+  }
+
+.card_body{
+  margin-top: 60px;
+}
+.card_body ul.social{
+  display: flex;
+  list-style: none;  
+  margin-bottom: 40px;
+  justify-content: space-around;
+}
+.card_body ul.social li{
+  cursor: pointer;
+}
+.card_body li button {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 40px;
+  margin-bottom: 7px;
+}
+.card_body li p{
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.card_body li.twitter:hover{
+  color: #b8b8b8;
+}
+.card_body li.facebook:hover{
+  color: #b8b8b8;
+}
+.card_body li.instagram:hover{
+  color: #b8b8b8;
+}
+
+
+
+/* tables */
+
+
+h1{
+    font-size: 1px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: end;
+    margin-bottom: 15px;
+  }
+  table{
+      margin : 0 auto;   
+    width:87%;
+    table-layout: fixed;
+     background: -webkit-linear-gradient(left, #f19ed0,  #da93bc);
+    background: linear-gradient(to right,#f19ed0, #da93bc);
+   
+  }
+  
+  .tbl-content{
+    
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+    margin-bottom: 10px;
+  }
+  th{
+    padding:  10px;
+    text-align: center;
+    font-weight: 50;
+    font-size: 13px;
+    color: black;
+    text-transform: uppercase;
+  }
+  td{
+    padding: initial;
+    text-align: center;
+    vertical-align:middle;
+    font-weight: 50;
+    font-size: 13px;
+    color: #fff;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+  }
+  
+  
+  /* demo styles */
+  
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  body{
+   
+    font-family: 'Roboto', sans-serif;
+    background : url('../img/leaves1.jpg');
+  }
+ 
+  
+  /* follow me template */
+  .made-with-love {
+    margin-top: 40px;
+    padding: 10px;
+    clear: left;
+    text-align: center;
+    font-size: 10px;
+    font-family: arial;
+    color: #fff;
+  }
+  .made-with-love i {
+    font-style: normal;
+    color: #F50057;
+    font-size: 14px;
+    position: relative;
+    top: 2px;
+  }
+  .made-with-love a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .made-with-love a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  
+  /* for custom scrollbar for webkit browser*/
+  
+  /* ::-webkit-scrollbar {
+      width: 6px;
+  } 
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  } 
+  ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  } */

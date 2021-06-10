@@ -1,0 +1,242 @@
+HTML CSSResult Skip Results Iframe
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: url('../img/blue-snow.png');
+}
+
+.logout{
+ 
+  display : flex;
+  margin: 10px;
+  justify-content: flex-end;
+ 
+  
+}
+.logout a button{
+  font-size: 20px;
+  padding: 12px 50px;
+  background-color: #0dcaf0;
+  border-radius: 15px;
+  border-color: white;
+}
+
+.agent_data {
+  margin-bottom:  0.5px;
+  
+}
+
+
+table {
+  max-width: 900px;
+  margin: 10px auto;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  margin-bottom: 20px;
+}
+
+caption {
+  font-size: 3.5em;
+  font-weight: 400;
+  padding: 10px 0;
+  margin : 20px 0;
+  font-family: ubuntu;
+}
+
+thead th {
+  font-weight: 400;
+  width : 500px;
+  background: #0dcaf0;
+  color: black;
+}
+
+tr {
+  background: #a2d2e2;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+}
+
+tr:nth-child(even) {
+  background: #fcfcfc;
+}
+
+th, td {
+  text-align: center;
+  padding: 20px;
+  font-weight: 300;
+  font-family:ubuntu;
+  font-size: 18px;
+}
+.agent_data a{
+    text-decoration:none;
+    color : rgb(252, 252, 252);
+    background: #00BFFF;
+    padding :5px 5px;
+    border : 0.5px solid;
+    border-radius : 7px;
+    font-weight: 200;
+}
+    
+
+.add_agent{
+  display : flex;
+  margin: 20px 0;
+  justify-content:space-evenly;
+  padding: 6em;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 10px;
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+.btn--changeGradient {
+  background: linear-gradient(90deg,#00BFFF, #e8f1ed);
+  background-size: 400%;
+}
+
+@keyframes changeGradientAnimation {
+  0% {
+    background-position: 0%;
+ }
+  100% {
+    background-position: 400%;
+ }
+}
+.btn--liquidBtn {
+  overflow: hidden;
+}
+.btn--liquidBtn span {
+  position: relative;
+  z-index: 1;
+}
+.btn--liquidBtn:hover div {
+  top: -120px;
+}
+.btn--liquidBtn div {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: #00BFFF;
+  
+  transition: 0.5s;
+}
+.btn--liquidBtn div::before, .btn--liquidBtn div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -75%);
+}
+.btn--liquidBtn div::before {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  
+}
+.btn--liquidBtn div::after {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+}
+@keyframes liquidAnimation {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+ }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+ }
+}
+
+
+.total{
+  margin: 80px 10px;
+  display : flex;
+  justify-content: center;
+}
+
+.total a button{
+  width: 400px;
+  font-size: 22px;
+  font-weight: 300;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 300px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  /* moz-transition: all .4s ease-in-out; */
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  padding : auto;
+  font-family: ubuntu;
+ 
+}
+.span{
+  font-weight: 900;
+  font-size: 28px;
+}
+a{
+  text-decoration:none;
+ 
+}
+
+.total a button:hover{
+  background-position: 100% 0;
+  /* moz-transition: all .4s ease-in-out; */
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.total a button:focus{
+  outline: none;;
+}
+
+.total_properties{
+  background-image: linear-gradient(to right, #00BFFF, #e8f1ed);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+  flex : 1;
+}
+
+.sold_properties{
+  background-image: linear-gradient(to right, #00BFFF, #e8f1ed);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+  flex : 1;
+}
+
+.rented_properties{
+  background-image: linear-gradient(to right, #00BFFF, #e8f1ed);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+/* .total_properties:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+  background: rgb(63, 62, 62);
+} */
+
+
+
+
+
+   
+ 
