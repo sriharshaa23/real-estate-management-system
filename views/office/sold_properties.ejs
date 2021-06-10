@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sold Properties</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sold_properties.css">
+    <title>Total Properties</title>
+</head>
+<body>
+
+    <div class="data">
+        <div class="circle"> <%=counts[0].total_count %> </div>
+        <div class="ornament">		
+	<h2><span></span>Total Sold Properties</h2>
+    </div>
+    </div>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Property ID</th>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>MOBILE</th>
+                    <th>NO_OF_BEDROOMS</th>
+                    <th>NO_OF_BATHROOMS</th>
+                    <th>PRICE</th>
+                    <th>STATUS</th>
+                    <th>TAG</th>
+                    <th>LIST_DATE</th>
+                    <th>AREA</th>
+                    <th>CITY</th>
+                    <th>PINCODE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let sold of soldDetails) { %> 
+                    <tr>
+                        <td><%= sold.PID %></td> 
+                    <td><%= sold.ID %></td>
+                    <td><%= sold.OWNER_NAME %></td>
+                    <td><%= sold.OWNER_MOBILE %></td>
+                    <td><%= sold.NO_OF_BEDROOMS %></td>
+                    <td><%= sold.NO_OF_BATHROOMS %></td>
+                    <td><%= sold.PRICE %></td>
+                    <td><%= sold.STATUS %></td>
+                    <td><%= sold.TAG %></td>
+                    <td><%= sold.LIST_DATE %></td>
+                    <td><%= sold.AREA %></td>
+                    <td><%= sold.CITY %></td>
+                    <td><%= sold.pincode %></td>
+                       
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

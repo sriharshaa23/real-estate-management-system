@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profile.css">
+    <title>Profile</title>
+</head>
+
+<style>
+    #properties {
+        display : none;
+    }
+    #sold {
+        display : none;
+    }
+    #rented {
+        display : none;
+    }
+
+    .heading{
+        display : none;
+        text-align : center;
+        font-family: ubuntu;
+        font-size: 24px;
+    }   
+</style>
+<body>
+    <div class="card">
+        <header>    
+          <img src='/img/agent.png' alt=''>
+          <p class="face__name"><%= profile[0].NAME %>  </p>
+          <h4> Agent Id  :  <%= profile[0].ID %></h4>
+          <h5>Contact  <%= profile[0].CONTACT %></h5>
+          
+        </header>
+        <div class="card_body">
+          <ul class="social">
+            <li class="twitter">
+               <button onclick="toggleProperties()"><h3><%= cproperty[0].total_count %></h3></button>
+              <p>Total Properties</p>
+            </li>   
+            <li class="facebook">
+              <button onclick="toggleSold()"><h3><%= csold[0].total_count %></h3> </button>
+              <p>Properties Sold</p>
+            </li>
+            <li class="instagram">
+               <button onclick="toggleRented()"><h3><%= crented[0].total_count %></h3></button>
+              <p>Properties Rented</p>
+            </li>
+        </div>
+      </div>
+
+      <!-- Tables -->
+
+      <div class="heading">
+
+    </div>
+
+
+      <!-- allproperties -->
+     
+      <section>
+        <div class="table_properties" id="properties"> 
+        <h1>Fixed Table header</h1>
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Property ID</th>
+                <th>ID</th>
+                <th>OWNER_NAME</th>
+                <th>OWNER_MOBILE</th>
+               
+                <th>PRICE</th>
+                <th>STATUS</th>
+                <th>TAG</th>
+                <th>LIST_DATE</th>
+                <th>AREA</th>
+                <th>CITY</th>
+               
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <% for(let property of pdetails) { %> 
+              <tr>
+                <td> <%= property.PID %></td>
+                <td><%= property.ID %>  </td>
+                <td><%= property.OWNER_NAME%></td>
+                <td><%= property.OWNER_MOBILE%></td>
+               
+                <td> RS <%= property.PRICE %></td>
+                <td><%= property.STATUS %></td>
+                <td><%= property.TAG %></td>
+                <td><%= property.LIST_DATE %></td>
+                <td><%= property.AREA %></td>
+                <td><%= property.CITY %></td>
+                
+                
+              </tr>
+              <% } %> 
+              
+            </tbody>
+          </table>
+        </div>
+    </div>
+      </section>
+    
+
+      <!-- properties sold -->
+       
+      <section>
+        <div class="table_sold" id="sold">
+        <h1>Fixed Table header</h1>
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Property ID</th>
+                <th>ID</th>
+                <th>OWNER_NAME</th>
+                <th>OWNER_MOBILE</th>
+               
+                <th>PRICE</th>
+               
+               
+                <th>LIST_DATE</th>
+                <th>AREA</th>
+                <th>CITY</th>
+                
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <% for(let sold of solds) { %> 
+                <tr>
+                  <td> <%= sold.PID %></td>
+                  <td><%= sold.ID %></td>
+                  <td><%= sold.OWNER_NAME %></td>
+                  <td><%= sold.OWNER_MOBILE %></td>
+                  
+                  <td> RS <%= sold.PRICE %></td>
+                 
+                 
+                  <td><%= sold.LIST_DATE %></td>
+                  <td><%= sold.AREA %></td>
+                  <td><%= sold.CITY %></td>
+                  
+                  </tr>
+                <% } %>
+              
+            </tbody>
+          </table>
+        </div>
+    </div>
+      </section>
+   
+
+
+      <!-- properties rented -->
+      <section>
+    <div class="table_rented" id="rented">
+        <h1>.hi</h1>
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Property ID</th>
+                <th>ID</th>
+                <th>OWNER_NAME</th>
+                <th>OWNER_MOBILE</th>
+               
+                <th>PRICE</th>
+                
+                <th>LIST_DATE</th>
+                <th>AREA</th>
+                <th>CITY</th>
+                
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              <% for(let rent of rented) { %> 
+                <tr>
+                  <td> <%= rent.PID %></td>
+                  <td><%= rent.ID %></td>
+                  <td><%= rent.OWNER_NAME %></td>
+                  <td><%= rent.OWNER_MOBILE %></td>
+                  <td> RS <%= rent.PRICE %></td>
+                  
+                  <td><%= rent.LIST_DATE %></td>
+                  <td><%= rent.AREA %></td>
+                  <td><%= rent.CITY %></td>
+                  
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+        </div>  
+    </div>
+      </section>
+    
+      <script>
+          function toggleProperties(){
+              const properties = document.querySelector('#properties');
+              const sold = document.querySelector('#sold');
+              const rented = document.querySelector('#rented');
+              console.log(properties,sold,rented)
+              if (properties.style.display === "none" || properties.style.display === "") {
+                  console.log('properties')
+                properties.style.display = "block";
+                
+                sold.style.display = "none";
+                rented.style.display = "none";
+
+            } else {
+                 properties.style.display = "none";
+                
+                }
+          }
+
+          function toggleSold(){
+            const properties = document.querySelector('#properties');
+              const sold = document.querySelector('#sold');
+              const rented = document.querySelector('#rented');
+              console.log(properties,sold,rented)
+              if (sold.style.display === "none" || sold.style.display === "") {
+                  console.log('sold')
+                properties.style.display = "none";
+                sold.style.display = "block";
+                rented.style.display = "none";
+
+            } else {
+                 sold.style.display = "none";
+                }
+          }
+
+          function toggleRented() {
+            const properties = document.querySelector('#properties');
+              const sold = document.querySelector('#sold');
+              const rented = document.querySelector('#rented');
+              console.log(properties,sold,rented)
+              if (rented.style.display === "none" || rented.style.display === "") {
+                  console.log('rented')
+                properties.style.display = "none";
+                sold.style.display = "none";
+                rented.style.display = "block";
+
+            } else {
+                 rented.style.display = "none";
+            
+                } 
+          }
+      </script>
+
+
+
+</body>
+</html>

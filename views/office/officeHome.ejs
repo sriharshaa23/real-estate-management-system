@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/officeHome.css">
+    <title>Office</title>
+</head>
+<body>
+   <div class="logout">
+     <a href="/logout"> <button>
+      Logout 
+     </button> </a>
+   </div>
+   
+    <div class="agent_data">
+        <table>
+            <caption>Agent Information</caption>
+            <thead>
+              <tr>
+                <th scope="col">Agent ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Profile</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(let agent of agentdata){ %> 
+              <tr>
+                <td><%= agent.ID %></td> 
+                <td><%= agent.NAME %></td>
+                <td><a href="/office/profile/<%= agent.ID %>">View Profile</a></td>
+              </tr>
+              <% } %>
+             
+            </tbody>
+          </table>
+    </div>
+
+    <div class="add_agent">
+
+      <a href="/office/add_agent">
+        <button class="btn btn--changeGradient">
+          Add Agent</button>
+         
+      </a>
+      
+
+
+     <a href="/office/add_property">
+      <button class="btn btn--changeGradient">
+        Add Property</button>
+    </a> 
+ 
+    </div>
+
+    
+
+    <div class="total">
+
+  
+      <a  href="/office/total_properties">
+        <button class="total_properties">
+         Total Properties
+         <span class="span"><%=countp[0].total_count%></span></button> 
+        
+      </a>
+       
+    
+
+      <a href="/office/total_sold_properties">
+      <button class="sold_properties" > 
+         Total Sold Properties
+         <span class="span"> <%=counts[0].total_count %> </span> </button>
+        
+      </a>
+    
+
+    
+      <a href="/office/total_rented_properties">
+        <button class="rented_properties"> 
+          Total Rented Properties 
+          <span class="span"> <%=countr[0].total_count %> </span></button>
+        
+      </a>
+    
+
+    </div>
+
+</body>
+</html>
+

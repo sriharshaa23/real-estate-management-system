@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Add Property</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/fonts/iconic/css/material-design-iconic-font.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+
+
+	<link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/addProperty.css">
+
+
+<script>
+ function dynamicdropdown(listindex)
+    {
+		const status = document.querySelector('#status');
+        switch (listindex)
+        {
+        case "sale" :
+			const availableSell = new Option('Available For Sell','available_for_sell');
+			const sold = new Option('Sold','sold');
+			status.options[1] = availableSell
+			status.options[2] = sold
+         
+            break;
+        case "rent" :
+		const availableRent = new Option('Available For Rent','available_for_rent');
+			const rented= new Option('Rented','rented');
+			status.options[1] = availableRent
+			status.options[2] = rented
+           
+            break;
+        }
+        return true;
+    }
+</script>
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form method= "POST" action="/agent/add_property" id="form" class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Add  Property
+				</span>
+				<div>
+                    <input type="hidden" name="agentId" value="<%= id %> ">
+                </div>
+
+				<label class="label-input100 " >Enter OWNER_NAME *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="owner_name" class="input100" type="number" name="owner_name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100 " >Enter OWNER_MOBILE *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="owner_mobile" class="input100" type="number" name="owner_mobile">
+					<span class="focus-input100"></span>
+				</div>
+                 
+				<label class="label-input100" >Enter NO_OF_BEDROOMS *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="no_of_bedrooms" class="input100" type="number" name="no_of_bedrooms" >
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" >Enter NO_OF_BATHROOMS *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="no_of_bathrooms" class="input100" type="number" name="no_of_bathrooms" >
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" >Enter PRICE *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="price" class="input100" type="number" name="price" >
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" >Enter NO_OF_BEDROOMS *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="bhk" class="input100" type="number" name="bhk" >
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" >Enter PRICE *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="price" class="input100" type="number" name="price" >
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100 " >Select STATUS *</label>
+				<div class="wrap-input100 validate-input">
+						<select class="input100" name="status" id="status">
+							<option selected disabled value=""> Select Status</option>
+						</select>
+					<span class="focus-input100"></span>
+
+				<label class="label-input100 " >Enter TAG *</label>
+				<div class="wrap-input100 validate-input">
+					<select class="input100" id="type" name="type"  onchange= "javascript :dynamicdropdown(this.options[this.selectedIndex].value)" >
+					<option disabled selected class="input100" value=""> Select option </option>
+					<option class="" name="sale" value="sale">Sell</option>
+					<option name="rent" value="rent">Rent</option>
+				</select>
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100 " >Enter LIST_DATE *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="example-date-input" class="input100" type="date" name="date" >
+					<span class="focus-input100"></span>
+				</div>
+                   
+				<label class="label-input100" >Enter AREA *</label>
+				<div class="wrap-input100 validate-input">
+					<input  id="area" class="input100" type="number" name="area" >
+					<span class="focus-input100"></span>
+				</div>
+
+                <label class="label-input100" >Enter CITY *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="city" class="input100" type="number" name="city" >
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100" >Enter pincode *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="pincode" class="input100" type="number" name="pincode" >
+					<span class="focus-input100"></span>
+				</div>
+				
+			<!--	<label class="label-input100" >Enter TAG  *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="tag" class="input100" type="text" name="tag">
+					<span class="focus-input100"></span>
+				</div>
+				<label class="label-input100 " >Enter STATUS *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="status" class="input100" type="text" name="status">
+					<span class="focus-input100"></span>
+				</div>
+
+				<label class="label-input100 " >Enter TAG *</label>
+				<div class="wrap-input100 validate-input">
+					<select class="input100" id="type" name="type"  onchange= "javascript :dynamicdropdown(this.options[this.selectedIndex].value)" >
+					<option disabled selected class="input100" value=""> Select option </option>
+					<option class="" name="sale" value="sale">Sell</option>
+					<option name="rent" value="rent">Rent</option>
+				</select>
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<label class="label-input100 " >Select STATUS *</label>
+				<div class="wrap-input100 validate-input">
+						<select class="input100" name="status" id="status">
+							<option selected disabled value=""> Select Status</option>
+						</select>
+					<span class="focus-input100"></span>
+				</div>
+				<label class="label-input100 " >Enter OWNER_NAME *</label>
+				<div class="wrap-input100 validate-input">
+					<input id="owner_id" class="input100" type="number" name="owner_id">
+					<span class="focus-input100"></span>
+				</div>
+
+                <div>
+                    <input type="hidden" name="agentId" value="<%= id %> ">
+                </div>-->
+
+				
+
+				<div class="container-contact100-form-btn">
+					<button type="submit" onclick="submit()"  class="contact100-form-btn">
+						<span>
+							Add
+							<i class="zmdi zmdi-arrow-right m-l-8"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+<script>
+		function submit(){
+			console.log('form submit');
+			const form =  document.querySelector('#form');
+			form.submit();
+			console.log('form submit');
+			return true;
+		}
+
+	
+	
+
+</script>
+
+<!--===============================================================================================-->
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<!-- <script src="/vendor/daterangepicker/moment.min.js"></script> -->
+	<!-- <script src="/vendor/daterangepicker/daterangepicker.js"></script> -->
+<!--===============================================================================================-->
+	<script src="/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/js/form.js"></script>
+
+</body>
+</html>

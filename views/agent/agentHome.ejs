@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/agentHome.css" />
+  </head>
+  <body>
+
+    <div class="logout">
+     <a href="/logout"> <button>
+       Logout 
+     </button> </a>
+   </div>
+
+    <!-- agent info -->
+    <div class="agent">
+      <div class="agent_info mt-2 px-2">
+        <div class="flex w-50 ">
+          <div class="agent_info_width">
+            <div class="bg-white shadow-xl rounded-lg py-3">
+              <div class="photo-wrapper p-1">
+                <img
+                  class="w-10 h-10 rounded-full mx-auto"
+                  src="img/agent.png"
+                  alt="imgae"
+                />
+              </div>
+            
+              <div class="p-2">
+                <h3
+                  class="text-center text-xl text-gray-900 font-medium leading-8"
+                >
+                  <%= `${info[0].NAME} ` %>
+                </h3>
+                
+                 <div class="text-center text-m text-gray-900  font-semibold">
+                  <p>Id: <%= info[0].ID %></p>
+                 </div>
+                  <table class="text-m my-3">
+                    <div class="text-center text-m text-gray-900  font-semibold">
+                     <p>Contact: <%= info[0].CONTACT %></p>
+                    </div>
+                  <table class="text-m my-3">
+                    <div class="text-center text-m text-gray-900  font-semibold">
+                      <p> No of prop sold: <%= info[0].NUM_PROP_SOLD %></p>
+                    </div>
+                 <table class="text-m my-3">
+                      <div class="text-center text-m text-gray-900  font-semibold">
+                        <p>No of prop rent: <%= info[0].NUM_PROP_RENT %></p>
+                      </div>
+                 <table class="text-m my-3">
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+
+        
+
+      </div>
+
+     
+
+      <hr />
+
+      <!-- property details -->
+
+      <div class="property_details">
+        <h1>Property Details</h1>
+        <table >
+          <thead>
+            <tr>
+              <th scope="col">PID</th>
+              <th scope="col">ID</th>
+              <th scope="col">OWNER NAME</th>
+              <th scope="col">MOBILE</th>
+              <th scope="col">BEDROOMS</th>
+              <th scope="col">BATHROOMS</th>
+              <th scope="col">PRICE</th>
+              <th scope="col">STATUS</th>
+              <th scope="col">TAG</th>
+              <th scope="col">DATE</th>
+              <th scope="col">AREA</th>
+              <th scope="col">CITY</th>
+              <th scope="col">PINCODE</th>
+              <th scope="col">UPDATE STATUS</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% for(let property of pDetails ) { %> 
+            <tr>
+              <td><%= property.PID %></td> 
+              <td><%= property.ID %></td>
+              <td><%= property.OWNER_NAME %></td>
+              <td><%= property.OWNER_MOBILE %></td>
+              <td><%= property.NO_OF_BEDROOMS %></td>
+              <td><%= property.NO_OF_BATHROOMS %></td>
+              <td><%= property.PRICE %></td>
+              <td><%= property.STATUS %></td>
+              <td><%= property.TAG %></td>
+              <td><%= property.LIST_DATE %></td>
+              <td><%= property.AREA %></td>
+              <td><%= property.CITY %></td>
+              <td><%= property.pincode %></td>
+              <td><form action="/agent/update/<%= property.PID %>" method="POST">
+                <select class="" id="status" name="status">
+                  <% if(property.TAG == 'SALE') { %> 
+                      <option name="OPEN" value="OPEN" <%= property.STATUS == 'OPEN' ? 'selected' : '' %>>OPEN</option>
+                      <option name="CLOSED" value="CLOSED"  <%= property.STATUS == 'CLOSED' ? 'selected' : '' %>>CLOSED</option>
+                  <% } else if( property.TAG == 'RENT') { %> 
+                      <option name="OPEN" value="OPEN" <%= property.STATUS == 'OPEN' ? 'selected' : '' %>>OPEN</option>
+                      <option name="CLOSED" value="CLOSED" <%= property.STATUS == 'CLOSED' ? 'selected' : '' %>>CLOSED</option>
+                      <% } %> 
+                </select>
+
+                <button class="submit" type="submit"> update </button>
+                 
+                 
+              </form></td>
+              
+            </tr>
+            <% } %> 
+          
+          </tbody>
+        </table>
+      </div>
+
+<hr>/
+       <!-- property sold/rented -->
+      <div class="property_sold_rented">
+        <h1>Property Sold/Rented</h1>
+        <table >
+          <thead>
+            <tr>
+              <th scope="col">Property id</th>
+              <th scope="col">Area</th>
+              <th scope="col">City</th>
+              <th scope="col">Status</th>
+              <th scope="col">Tag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let detail of sold_rented ) { %> 
+            <tr>
+              <td><%= detail.PID %></td>
+              <td><%= detail.AREA %></td>
+              <td><%= detail.CITY %></td>
+              <td><%= detail.STATUS %></td>
+              <td><%= detail.TAG %></td>
+            </tr>
+            <% } %> 
+          
+          </tbody>
+          
+        </table>
+      </div>
+
+      <!-- available Properties -->
+    </div>
+  </body>
+</html>

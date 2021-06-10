@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rented Properties</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sold Properties</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/rented_properties.css">
+    <title>Total Properties</title>
+</head>
+<body>
+
+    <div class="data">
+        <div class="circle"> <%=rentedp[0].total_count %> </div>
+        <div class="ornament">		
+	<h2><span></span>Total Rented Properties</h2>
+    </div>
+    </div>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Property ID</th>
+                    <th>ID</th>
+                    <th>OWNER_NAME</th>
+                    <th>OWNER_MOBILE</th>
+                    <th>NO_OF_BEDROOMS</th>
+                    <th>NO_OF_BATHROOMS</th>
+                    <th>PRICE</th>
+                    <th>STATUS</th>
+                    <th>TAG</th>
+                    <th>LIST_DATE</th>
+                    <th>AREA</th>
+                    <th>CITY</th>
+                    <th>PINCODE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let rented of rentedDetails) { %> 
+                    <tr>
+                        <td><%= rented.PID %></td> 
+                    <td><%= rented.ID %></td>
+                    <td><%= rented.OWNER_NAME %></td>
+                    <td><%= rented.OWNER_MOBILE %></td>
+                    <td><%= rented.NO_OF_BEDROOMS %></td>
+                    <td><%= rented.NO_OF_BATHROOMS %></td>
+                    <td><%= rented.PRICE %></td>
+                    <td><%= rented.STATUS %></td>
+                    <td><%= rented.TAG %></td>
+                    <td><%= rented.LIST_DATE %></td>
+                    <td><%= rented.AREA %></td>
+                    <td><%= rented.CITY %></td>
+                    <td><%= rented.pincode %></td>
+                    </tr>
+                    <% } %>
+               
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+</body>
+</html>
